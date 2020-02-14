@@ -348,7 +348,7 @@ def price_lookup(product)
 end
 
 def calculate_price(products, shipping)
-  amount = 1099  # Default amount.
+  amount = 2000  # Default amount.
 
   if products
     amount = products.reduce(0) { | sum, product | sum + price_lookup(product) }
@@ -372,16 +372,7 @@ def currency_for_country(country)
   # Determine currency to use. Generally a store would charge different prices for
   # different countries, but for the sake of simplicity we'll charge X of the local currency.
 
-  case country
-  when 'us'
-    'usd'
-  when 'my'
-    'myr'
-  when 'nl'
-    'eur'
-  else
-    'usd'
-  end
+  'aud'
 end
 
 def payment_methods_for_country(country)
